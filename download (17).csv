@@ -1,2 +1,0 @@
-count_unique_users,count_sessions,total_sessions_with_both,unique_users_with_both,docs_first_count,workflow_first_count,docs_first_percentage,workflow_first_percentage,avg_mins_docs_to_workflow,avg_mins_workflow_to_docs,pattern_all_docs_then_workflow,pattern_all_workflow_then_docs,pattern_docs_workflow_docs
-58263,71030,71030,58263,22823,48207,0.00,100.00,121.58,599.90,16140,8538,1708
