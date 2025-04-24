@@ -1,0 +1,2 @@
+﻿database('copilot').business_user_enrollment
+| take 100
