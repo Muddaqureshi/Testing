@@ -1,9 +1,0 @@
-﻿database('canonical').metered_usage_line_items
-| where product_name == 'actions' and submission_state == 'submitted' and day >= ago(30d)
-and account_id in ((database('snapshots').github_classroom_organizations_current | distinct github_id))
-| extend repo_id = toint(parse_json(custom_fields)['repository.id'])
-| join kind = inner hint.strategy=shuffle (database('snapshots').github_classroom_assignment_repos_current) on $left.repo_id==$right.github_repo_id
-| serialize key = tostring(bag_keys(discounts)[0])
-| extend _discounts = todouble(parse_json(discounts)[key])
-| summarize sum(net_amount) by repo_id, account_id, billable_owner_id, month = format_datetime(todatetime(day), 'yyyy-MM')
-| where sum_net_amount >0
