@@ -1,3 +1,0 @@
-﻿database('canonical').metered_usage_line_items
-| where product_name == 'actions'
-| limit 10
